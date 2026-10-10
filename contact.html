@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact — trimite-i un mesaj lui Ștefan-Ioan Poterașu.">
+    <title>Contact — Ștefan-Ioan Poterașu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#continut">Sari la conținut</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html">Ștefan <span>Poterașu</span></a>
+            <nav class="site-nav" aria-label="Navigare principală">
+                <ul>
+                    <li><a href="index.html">Acasă</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="continut">
+        <section class="page-title" aria-labelledby="titlu-contact">
+            <div class="container">
+                <h1 id="titlu-contact">Contact</h1>
+                <p>Ai o întrebare, o propunere de proiect sau vrei doar să te prezinți? Scrie-mi.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-grid">
+                <div>
+                    <h2 style="font-size:1.3rem">Trimite un mesaj</h2>
+                    <!-- Fără backend: la trimitere se deschide clientul de e-mail, cu subiectul și mesajul completate -->
+                    <form action="mailto:stefanpoterasu95@gmail.com" method="get" enctype="text/plain">
+                        <fieldset>
+                            <legend style="position:absolute;left:-999px">Formular de contact</legend>
+
+                            <div class="field">
+                                <label for="subject">Subiect</label>
+                                <input type="text" id="subject" name="subject" placeholder="Despre ce este vorba?" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="body">Mesaj</label>
+                                <textarea id="body" name="body" placeholder="Scrie aici mesajul tău (poți adăuga și numele tău)…" required></textarea>
+                            </div>
+
+                            <button class="btn" type="submit">Trimite mesajul</button>
+                            <p class="hint">Apăsând butonul se deschide aplicația ta de e-mail, cu mesajul gata completat.</p>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <aside class="contact-info" aria-labelledby="titlu-date">
+                    <h2 id="titlu-date">Date de contact</h2>
+                    <address>
+                        <dl>
+                            <dt>E-mail</dt>
+                            <dd><a href="mailto:stefanpoterasu95@gmail.com">stefanpoterasu95@gmail.com</a></dd>
+                            <dt>E-mail studențesc</dt>
+                            <dd><a href="mailto:stefan.poterasu@stud.acs.upb.ro">stefan.poterasu@stud.acs.upb.ro</a></dd>
+                            <dt>Telefon</dt>
+                            <dd><a href="tel:+40773731147">0773 731 147</a></dd>
+                            <dt>GitHub</dt>
+                            <dd><a href="https://github.com/PoterasuStefan">github.com/PoterasuStefan</a></dd>
+                            <dt>LinkedIn</dt>
+                            <dd><a href="https://www.linkedin.com/in/%C5%9Ftefan-potera%C5%9Fu-464304391/">Ștefan Poterașu</a></dd>
+                        </dl>
+                    </address>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Ștefan-Ioan Poterașu</p>
+            <p>
+                <a href="index.html">Acasă</a> ·
+                <a href="cv.html">CV</a> ·
+                <a href="https://github.com/PoterasuStefan">GitHub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

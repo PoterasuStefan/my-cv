@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV — Ștefan-Ioan Poterașu: educație, competențe, experiență, proiecte și premii.">
+    <title>CV — Ștefan-Ioan Poterașu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+/* ===== Variabile & reset ===== */
+:root {
+    --navy: #1E2939;
+    --navy-dark: #151e2b;
+    --accent: #ffa600;
+    --accent-dark: #c27f00;
+    --text: #333;
+    --muted: #595959;
+    --light: #f4f6f8;
+    --border: #e1e5ea;
+    --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    background: #fff;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--accent-dark); }
+a:hover { color: var(--navy); }
+
+h1, h2, h3 { line-height: 1.25; color: #000; margin: 0 0 .5em; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; }
+
+ul { padding-left: 1.2rem; }
+
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--accent);
+    color: #000;
+    padding: .5rem 1rem;
+    z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ===== Header / navigație ===== */
+.site-header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+    padding-block: .8rem;
+}
+
+.brand {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+.brand span { color: var(--accent); }
+
+.site-nav ul {
+    display: flex;
+    gap: .25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .45rem .9rem;
+    border-radius: var(--radius);
+}
+.site-nav a:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.site-nav a[aria-current="page"] {
+    background: var(--accent);
+    color: #000;
+}
+
+/* ===== Butoane ===== */
+.btn {
+    display: inline-block;
+    padding: .7rem 1.4rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: .9rem;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    background: var(--accent);
+    color: #000;
+    cursor: pointer;
+    font-family: inherit;
+}
+.btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #000; }
+.btn-outline { background: transparent; color: #fff; }
+.btn-outline:hover { background: rgba(255, 255, 255, .12); border-color: var(--accent); color: #fff; }
+
+/* ===== Home ===== */
+.hero {
+    background: var(--navy);
+    color: #fff;
+    padding-block: 3.5rem;
+}
+.hero .container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+.hero h1 { color: #fff; }
+.hero .role {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    font-size: .85rem;
+    margin: 0 0 .5rem;
+}
+.hero p { color: #d6dce4; max-width: 62ch; }
+.hero figure { margin: 0; }
+.hero img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    display: block;
+}
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+
+.section { padding-block: 3rem; }
+.section.alt { background: var(--light); }
+.section > .container > h2 {
+    font-size: 1.6rem;
+    padding-bottom: .4rem;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+.card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+.card p { margin: 0; color: var(--muted); }
+
+.featured {
+    display: grid;
+    gap: .5rem;
+}
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 0; }
+.tags li {
+    background: var(--navy);
+    color: #fff;
+    font-size: .75rem;
+    padding: .2rem .7rem;
+    border-radius: 999px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: var(--navy-dark);
+    color: #b9c2cf;
+    padding-block: 1.5rem;
+    font-size: .85rem;
+}
+.site-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+}
+.site-footer a { color: var(--accent); }
+
+/* ===== Pagina CV ===== */
+.cv-toolbar {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding-block: .8rem;
+}
+.cv-toolbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem 1rem;
+}
+.cv-toolbar p { margin: 0; color: var(--muted); font-size: .85rem; }
+.cv-toolbar .btn { background: var(--navy); border-color: var(--navy); color: #fff; }
+.cv-toolbar .btn:hover { background: var(--accent); border-color: var(--accent); color: #000; }
+
+.cv {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    width: min(1100px, 100%);
+    margin: 2rem auto;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, .12);
+}
+.cv-main { padding: 2.5rem 2.5rem 2rem; background: #fff; order: 1; }
+.cv-side { background: var(--navy); color: #fff; padding: 2.5rem 2rem; order: 2; }
+
+.cv-main h1 { font-size: 2.3rem; margin-bottom: .1rem; }
+.cv-main .role { font-weight: 700; font-size: .9rem; margin: 0 0 1rem; color: var(--accent-dark); text-transform: uppercase; letter-spacing: .04em; }
+.cv-main > header p { color: var(--muted); }
+
+.cv-main section { margin-top: 2rem; }
+.cv-main section > h2 {
+    font-size: 1.25rem;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.entry { margin-bottom: 1.2rem; }
+.entry h3 { margin-bottom: .1rem; }
+.entry .org { color: var(--accent-dark); font-weight: 700; }
+.entry .meta { margin: 0 0 .4rem; font-size: .85rem; color: var(--muted); }
+.entry ul { margin: .3rem 0 0; color: var(--muted); }
+.entry p { margin: .2rem 0; color: var(--muted); }
+
+.cv-side h2 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid var(--accent);
+}
+.cv-side h2:first-of-type { margin-top: 0; }
+.cv-side figure { margin: 0 0 1.5rem; text-align: center; }
+.cv-side img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+}
+.cv-side a { color: #fff; word-break: break-word; }
+.cv-side a:hover { color: var(--accent); }
+.cv-side dl { margin: 0; }
+.cv-side dt { color: var(--accent); font-weight: 700; font-size: .8rem; text-transform: uppercase; margin-top: .7rem; }
+.cv-side dd { margin: 0; font-size: .9rem; }
+.cv-side ul { list-style: none; padding: 0; margin: 0; }
+.cv-side li { padding: .15rem 0 .15rem 1rem; position: relative; font-size: .9rem; }
+.cv-side li::before { content: ""; position: absolute; left: 0; top: .85em; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+/* ===== Pagina Contact ===== */
+.page-title {
+    background: var(--navy);
+    color: #fff;
+    padding-block: 2.5rem;
+}
+.page-title h1 { color: #fff; margin: 0 0 .3rem; }
+.page-title p { color: #d6dce4; margin: 0; }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+form fieldset { border: 0; padding: 0; margin: 0; }
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-weight: 700; margin-bottom: .35rem; font-size: .9rem; }
+.field input,
+.field textarea {
+    width: 100%;
+    padding: .7rem .9rem;
+    font: inherit;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+}
+.field input:focus,
+.field textarea:focus { border-color: var(--accent); outline: none; }
+.field textarea { min-height: 200px; resize: vertical; }
+.hint { font-size: .8rem; color: var(--muted); margin-top: .75rem; }
+
+.contact-info {
+    background: var(--light);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+}
+.contact-info h2 { font-size: 1.1rem; }
+.contact-info address { font-style: normal; }
+.contact-info dl { margin: 0; }
+.contact-info dt { font-weight: 700; font-size: .8rem; text-transform: uppercase; color: var(--muted); margin-top: .8rem; }
+.contact-info dd { margin: 0; word-break: break-word; }
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+    .hero .container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .hero .actions { justify-content: center; }
+    .hero img { width: 180px; height: 180px; }
+    .cv { grid-template-columns: 1fr; margin: 0; box-shadow: none; }
+    .cv-main { order: 2; padding: 1.5rem 1.25rem; }
+    .cv-side { order: 1; padding: 1.5rem 1.25rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.9rem; }
+}
+
+@media (max-width: 520px) {
+    .site-header .container { justify-content: center; }
+}
+
+/* ===== Print (CV) ===== */
+@media print {
+    .site-header, .site-footer, .cv-toolbar, .skip-link { display: none; }
+    .cv { margin: 0; box-shadow: none; width: 100%; }
+    .cv-side { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#continut">Sari la conținut</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html">Ștefan <span>Poterașu</span></a>
+            <nav class="site-nav" aria-label="Navigare principală">
+                <ul>
+                    <li><a href="index.html">Acasă</a></li>
+                    <li><a href="cv.html" aria-current="page">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cv-toolbar">
+        <div class="container">
+            <p>Acest CV este o pagină HTML de sine stătătoare.</p>
+            <a class="btn" href="cv.html" download="Poterasu_Stefan_CV.html">⬇ Descarcă CV (HTML)</a>
+        </div>
+    </div>
+
+    <main id="continut" class="cv">
+        <article class="cv-main" aria-labelledby="nume">
+            <header>
+                <h1 id="nume">Ștefan-Ioan Poterașu</h1>
+                <p class="role">Student · Automatică și Calculatoare (AIASI)</p>
+                <p>
+                    Student în anul II la Politehnica București, pasionat de programare, robotică și inteligență
+                    artificială. Caut oportunități de a-mi dezvolta experiența practică în domeniul IT, de la
+                    software până la sisteme embedded.
+                </p>
+            </header>
+
+            <section aria-labelledby="educatie">
+                <h2 id="educatie">Educație</h2>
+                <div class="entry">
+                    <h3>Universitatea Politehnica din București</h3>
+                    <p class="meta"><span class="org">Facultatea de Automatică și Calculatoare, specializarea AIASI</span> · <time datetime="2025">2025</time> – prezent (anul II, absolvire estimată 2029)</p>
+                </div>
+                <div class="entry">
+                    <h3>Colegiul Național „Costache Negri”, Galați</h3>
+                    <p class="meta">Membru al Centrului de Excelență pentru Programare Orientată pe Obiecte (clasa a XI-a)</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="competente">
+                <h2 id="competente">Competențe</h2>
+                <div class="entry">
+                    <h3>Limbaje de programare</h3>
+                    <p>C, C++, C#, Java, Python</p>
+                </div>
+                <div class="entry">
+                    <h3>Unelte &amp; sisteme</h3>
+                    <ul>
+                        <li>Linux și terminal; server Linux propriu cu servicii Docker (Pi-hole, Jellyfin)</li>
+                        <li>Git și GitHub — peste 5 ani de utilizare activă, 29 de repository-uri publice</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Inteligență artificială</h3>
+                    <p>Integrarea modelelor LLM locale (Ollama/LLaMA) în aplicații reale și conectarea lor la API-uri externe.</p>
+                </div>
+                <div class="entry">
+                    <h3>Hardware &amp; electronică</h3>
+                    <p>Electronică de bază și programare de microcontrolere (Arduino).</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="experienta">
+                <h2 id="experienta">Experiență</h2>
+                <div class="entry">
+                    <h3>Co-fondator și alumnus (fost CEO) <span class="org">· Seramitae Robotics Club</span></h3>
+                    <p class="meta"><time datetime="2022-09">septembrie 2022</time> – <time datetime="2023-10">octombrie 2023</time></p>
+                    <ul>
+                        <li>Am co-fondat și condus de la zero o echipă de robotică studențească, dezvoltată într-un grup tehnic unit.</li>
+                        <li>Am susținut ateliere de programare și hardware (Arduino/microcontrolere) pentru membrii noi.</li>
+                        <li>Am coordonat proiecte de robotică ecologică, printre care „SeramiClean Robo”.</li>
+                        <li>Am reprezentat clubul în emisiuni TV (Antena 3 – România Inteligentă) și podcasturi.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section aria-labelledby="proiecte">
+                <h2 id="proiecte">Proiecte</h2>
+                <div class="entry">
+                    <h3><a href="https://github.com/PoterasuStefan/whatsapp-ac-bot">WhatsApp AC Bot</a></h3>
+                    <p>Bot care citește mesajele dintr-un grup WhatsApp, detectează intenția („e cald” / „e frig”) cu un LLM local (Ollama/LLaMA) și controlează automat un aparat de aer condiționat prin API-ul Samsung SmartThings.</p>
+                </div>
+                <div class="entry">
+                    <h3><a href="https://github.com/PoterasuStefan/Tema-GIGIQUANT-">Tema-GIGIQUANT-</a></h3>
+                    <p>Proiect în C cu structuri de date complexe (Programare Avansată).</p>
+                </div>
+                <div class="entry">
+                    <h3><a href="https://github.com/PoterasuStefan/Proiecte-realizate-in-cadrul-CEX">Proiecte realizate în cadrul CEX</a></h3>
+                    <p>Colecție de proiecte C# realizate la Centrul de Excelență (POO), clasa a XI-a.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="premii">
+                <h2 id="premii">Premii și concursuri</h2>
+                <ul>
+                    <li><strong>Locul I</strong> — Concursul Național „Florin Vasilescu” de Știință și Tehnologie, ed. a XXII-a, Călărași, mai 2023 („SeramiClean Robo”)</li>
+                    <li><strong>Locul I (etapa județeană)</strong> — Concursul Național de Activități Educative, Proiecte de mediu, iunie 2022 („Orașul Sprout”)</li>
+                    <li><strong>Locul II (etapa județeană)</strong> — Olimpiada de Inovare și Creație Digitală „InfoEducație”, iunie 2024</li>
+                    <li><strong>Participant</strong> — Concursul școlar internațional EU-CONEXUS „Think Smart, Create Green”, 2021/2022 (Erasmus+)</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="certificari">
+                <h2 id="certificari">Certificări și cursuri</h2>
+                <div class="entry">
+                    <h3>Embedded Android Summer School</h3>
+                    <p class="meta">Universitatea Politehnica din București, în parteneriat cu Google · <time datetime="2026-08">august 2026</time></p>
+                    <p>Am compilat și rulat AOSP (Android Open Source Project) pe Raspberry Pi și am dezvoltat o aplicație pentru controlul porturilor GPIO.</p>
+                </div>
+                <div class="entry">
+                    <h3>Azure AI Summer School</h3>
+                    <p class="meta">Microsoft România, în parteneriat cu UPB · <time datetime="2026-09">septembrie 2026</time></p>
+                    <p>Sesiuni practice și hackathon despre AI și aplicațiile lui în lumea reală.</p>
+                </div>
+                <div class="entry">
+                    <h3>Programare Java cu Greenfoot</h3>
+                    <p class="meta">Academia Micilor Developeri · 2026</p>
+                </div>
+            </section>
+        </article>
+
+        <aside class="cv-side" aria-label="Date de contact și limbi">
+            <figure>
+                <img src="data:image/jpeg;base64,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" width="180" height="180" alt="Portret al lui Ștefan-Ioan Poterașu">
+            </figure>
+
+            <h2>Contact</h2>
+            <dl>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:stefanpoterasu95@gmail.com">stefanpoterasu95@gmail.com</a></dd>
+                <dt>E-mail studențesc</dt>
+                <dd><a href="mailto:stefan.poterasu@stud.acs.upb.ro">stefan.poterasu@stud.acs.upb.ro</a></dd>
+                <dt>Telefon</dt>
+                <dd><a href="tel:+40773731147">0773 731 147</a></dd>
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/PoterasuStefan">github.com/PoterasuStefan</a></dd>
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/%C5%9Ftefan-potera%C5%9Fu-464304391/">Ștefan Poterașu</a></dd>
+            </dl>
+
+            <h2>Limbi</h2>
+            <ul>
+                <li>Română — limba maternă</li>
+                <li>Engleză — C2 (înțelegere, vorbire, scriere)</li>
+            </ul>
+
+            <h2>Tehnologii</h2>
+            <ul>
+                <li>C / C++</li>
+                <li>C# / Java</li>
+                <li>Python</li>
+                <li>Linux, Docker, Git</li>
+                <li>Arduino, Raspberry Pi</li>
+                <li>Ollama / LLaMA</li>
+            </ul>
+
+            <h2>Altele</h2>
+            <ul>
+                <li>Permis de conducere</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Ștefan-Ioan Poterașu</p>
+            <p><a href="index.html">Acasă</a> · <a href="contact.html">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,176 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site de prezentare — Ștefan-Ioan Poterașu, student la Facultatea de Automatică și Calculatoare, UPB.">
+    <title>Acasă — Ștefan-Ioan Poterașu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <title>My resume</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!--Main app-->
-    <div class="main-section">
-<!--Main section-->
+    <a class="skip-link" href="#continut">Sari la conținut</a>
 
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html">Ștefan <span>Poterașu</span></a>
+            <nav class="site-nav" aria-label="Navigare principală">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Acasă</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="right-section">
-    <!--About me-->
-<div class="about-me-section">
-    <h3 class="about-me-profession">
-        Back-End Developer
-    </h3>
+    <main id="continut">
+        <section class="hero" aria-labelledby="titlu-principal">
+            <div class="container">
+                <figure>
+                    <img src="img/stefan.jpg" width="220" height="220" alt="Portret al lui Ștefan-Ioan Poterașu, în aer liber, lângă un lac">
+                </figure>
+                <div>
+                    <p class="role">Student · Informatică aplicată &amp; AI</p>
+                    <h1 id="titlu-principal">Ștefan-Ioan Poterașu</h1>
+                    <p>
+                        Salut! Sunt student în anul II la Facultatea de Automatică și Calculatoare din cadrul
+                        Universității Politehnica din București (specializarea AIASI). Mă pasionează programarea,
+                        electronica și inteligența artificială, iar cel mai mult îmi place să construiesc lucruri
+                        care ies din ecran și interacționează cu lumea reală.
+                    </p>
+                    <p>
+                        Am pornit devreme: de peste 5 ani folosesc Git și GitHub, am co-fondat un club de robotică
+                        în liceu și am câștigat premii naționale cu proiecte de robotică ecologică. Astăzi lucrez
+                        cu C, C++, C#, Java și Python și îmi place să integrez modele LLM locale în aplicații practice.
+                    </p>
+                    <div class="actions">
+                        <a class="btn" href="cv.html">Vezi CV-ul</a>
+                        <a class="btn btn-outline" href="contact.html">Scrie-mi un mesaj</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h1 id="personName">
-        Poterasu Stefan
-    </h1>
-    <p>Sunt un student muncitor dornic sa capete experienta in domeniul IT</p>
+        <section class="section" aria-labelledby="titlu-pasiuni">
+            <div class="container">
+                <h2 id="titlu-pasiuni">Ce mă pasionează</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Robotică &amp; electronică</h3>
+                        <p>Programare de microcontrolere (Arduino) și proiecte hardware, de la clubul de robotică din liceu până la un server Linux propriu acasă.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Inteligență artificială</h3>
+                        <p>Integrarea unor modele LLM rulate local (Ollama/LLaMA) în aplicații reale, conectate la API-uri externe.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Linux &amp; sisteme embedded</h3>
+                        <p>Linux în terminal, servicii Docker (Pi-hole, Jellyfin) și Android (AOSP) rulat pe Raspberry Pi.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-</div>
-<!--Projects section-->
-<div class="Projects-section">
+        <section class="section alt" aria-labelledby="titlu-proiect">
+            <div class="container">
+                <h2 id="titlu-proiect">Proiect în prim-plan</h2>
+                <article class="featured">
+                    <h3>WhatsApp AC Bot</h3>
+                    <p>
+                        Un bot care citește mesajele dintr-un grup de WhatsApp, folosește un LLM rulat local
+                        (Ollama/LLaMA) pentru a detecta intenția („e cald” / „e frig”) și pornește sau oprește
+                        automat un aparat de aer condiționat inteligent prin API-ul Samsung SmartThings.
+                        Este singurul meu proiect realizat de unul singur care controlează direct un dispozitiv fizic.
+                    </p>
+                    <ul class="tags" aria-label="Tehnologii folosite">
+                        <li>Python</li>
+                        <li>Ollama / LLaMA</li>
+                        <li>SmartThings API</li>
+                        <li>WhatsApp</li>
+                    </ul>
+                    <p><a href="https://github.com/PoterasuStefan/whatsapp-ac-bot">Codul sursă pe GitHub →</a></p>
+                </article>
+            </div>
+        </section>
 
-    <h2 class="block-title">Projects </h2>
-    
-    <ul>
-        <li class="projects-section_li" id="firstElement">
-            
-           
+        <section class="section" aria-labelledby="titlu-realizari">
+            <div class="container">
+                <h2 id="titlu-realizari">Realizări</h2>
+                <ul>
+                    <li><strong>Locul I</strong> — Concursul Național „Florin Vasilescu” de Știință și Tehnologie, ediția a XXII-a, Călărași (mai 2023), cu proiectul „SeramiClean Robo”.</li>
+                    <li><strong>Locul I (etapa județeană)</strong> — Concursul Național de Activități Educative, categoria Proiecte de mediu, cu proiectul „Orașul Sprout” (iunie 2022).</li>
+                    <li><strong>Locul II (etapa județeană)</strong> — Olimpiada de Inovare și Creație Digitală „InfoEducație” (iunie 2024).</li>
+                </ul>
+                <p>Detalii complete, inclusiv educația și competențele, găsești în pagina <a href="cv.html">CV</a>.</p>
+            </div>
+        </section>
+    </main>
 
-            <span class="projects-item">
-
-                <a href="https://github.com/PoterasuStefan?tab=repositories">https://github.com/PoterasuStefan?tab=repositories</a>
-                <span>............</span>
-                
-
-                <Span class="bracket"> [ </Span><Span> C# </Span><Span class="bracket"> ] </Span>
-
-            </span>
-
-        </li>
-
-        
-    </ul>
-
-</div>
-
-
-
-<!--work experience section-->
-<div class="work-experience-section">
-    <h2 class="block-title">Work Experience</h2>
-     <!--Company nr.3-->
-    <div>
-       
-
-        <h3 class="work-experience-position">Front-End Developer <span class="work-company">freelance</span></h3>
-        <P>September 2019 - up to now   |   Country</P>
-        <UL class="work-experience-duties">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-
-
-
-        </UL>
-    </div>
-
-    <!--Company nr.2-->
-    <div>
-       
-
-        <h3 class="work-experience-position">Manager <span  class="work-company">Glory New</span></h3>
-        <P>March 2015 - October 2018   |   Country</P>
-        <UL class="work-experience-duties">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-
-
-
-        </UL>
-    </div>
-
-    <!--Company nr.1-->
-    <div>
-       
-
-        <h3 class="work-experience-position">Manager <span class="work-company">Glory LLC</span> </h3>
-        <P>June 2014 - February 2015   |   Country</P>
-        <UL class="work-experience-duties">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
-
-
-
-        </UL>
-    </div>
-
-    <!--Education-->
-    <div>
-        <h3 class="block-title">Education</h3>
-        National college Costache Negri
-    
-    </div>
-
-</div>
-</div>
-<!--Sidebar section-->
-<aside class="Sidebar-section">
-<img src="img/339661797_167155659562548_5047388497378293764_n.jpg" alt="my photo">
-<!--Contacts section-->
-<div class="contacts-section">
-    <h2 class="sidebar-title">Contacts</h2>
-    <div>
-        <span class="contacts-section-type">C:</span>
-        <a class="contacts-section-value"  href="tel:+40773631147">+40 773 631 147</a>
-        
-
-    </div>
-    <div>
-        <span class="contacts-section-type">
-            E:
-        </span>
-        <a class="contacts-section-value" href="mailto:spoterasu@gmail.com">spoterasu@gmail.com</a>
-    </div>
-</div>
-<!--Tech skills section-->
-<div  class="tech-skills-section">
-    <h2 class="sidebar-title" >Tech skills</h2>
-    <ul class="sidebar-list">
-        <li><span>C#</span></li>
-        <li><span>C++</span></li>
-        <li><span>Gdscript</span></li>
-
-    </ul>
-</div>
-
-
-<!--Soft skills section-->
-<div class="tech-skills-section">
-    <h2 class="sidebar-title" >Soft skills</h2>
-    <ul class="sidebar-list">
-        <li><span>Visual Studio</span></li>
-        <li><span>Visual Studio code</span></li>
-        <li><span>Godot</span></li>
-        <li><span>Github</span></li>
-
-    </ul>
-</div>
-</aside>
-
-    </div>
-
-
-    
-    
-
-
-
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Ștefan-Ioan Poterașu</p>
+            <p>
+                <a href="https://github.com/PoterasuStefan">GitHub</a> ·
+                <a href="https://www.linkedin.com/in/%C5%9Ftefan-potera%C5%9Fu-464304391/">LinkedIn</a> ·
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
